@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Fun Qur'an</title>
+    <meta name="description" content="Fun Qur'an - Belajar membaca Al-Qur'an mandiri">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+    <script>
+        document.addEventListener('backbutton', function(){
+            navigator.app.exitApp();
+        });
+    </script>
+</head>
+
+<body style="background-color: #f9fff9;">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader text-light" style="background-color: #336667;">
+        <div class="left">
+            <!--
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+            -->
+        </div>
+        <div class="pageTitle">Fun Qur'an</div>
+        <div class="right"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="full-height">
+        <div class="section full mt-4 mb-4 text-center">
+            <img src="assets/img/funquran.png" width="64" height="64">
+        </div>
+        <div class="section mt-4">
+            <div class="section-title large">Selamat belajar!</div>
+            Silakan pilih salah satu materi di bawah ini untuk memulai
+        </div>
+
+        <div class="section mt-2">
+            <div class="card">
+                <ul class="listview flush transparent image-listview">
+                    <li>
+                        <a href="listmateri1.html" class="item">
+                            <div class="icon-box bg-primary">
+                                1
+                            </div>
+                            <div class="in fs-5">
+                                <div>Huruf Sambung</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listmateri2.html" class="item">
+                            <div class="icon-box bg-primary">
+                                2
+                            </div>
+                            <div class="in fs-5">
+                                <div>Panjang Pendek</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listmateri3.html" class="item">
+                            <div class="icon-box bg-primary">
+                                3
+                            </div>
+                            <div class="in fs-5">
+                                <div>Harokat</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu text-light" style="background-color: #336667;">
+        <!--
+        <a href="#" class="item" onclick="navigator.app.exitApp();">
+            <div class="col">
+                <ion-icon name="exit-outline"></ion-icon>Keluar
+            </div>
+        </a>
+        -->
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    </div>
+    <!-- * App Sidebar -->
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+    <script>
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+    </script>
+
+</body>
+
+</html>

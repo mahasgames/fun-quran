@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Fun Qur'an</title>
+    <meta name="description" content="Fun Qur'an - Belajar membaca Al-Qur'an mandiri">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const idxHuruf = urlParams.get('huruf');
+        //var audio_dep = new Audio('audio/audio_1_'+idxHuruf+'_dep.mp3');
+        //var audio_ten = new Audio('audio/audio_1_'+idxHuruf+'_ten.mp3');
+        //var audio_bel = new Audio('audio/audio_1_'+idxHuruf+'_bel.mp3');
+        document.addEventListener('backbutton', function(){
+            location.href='listmateri1.html';
+        });
+
+        var audione = new Audio('audio/audio_1_'+idxHuruf+'.ogg');
+        var pP = Number(idxHuruf)-1;
+        var nP = Number(idxHuruf)+1;
+        if(idxHuruf>1){
+            var prevPage = "materi.html?huruf="+pP;
+        } else {
+            var prevPage = "#";
+        }
+        if(idxHuruf<28){
+            var nextPage = "materi.html?huruf="+nP;
+        } else {
+            var nextPage = "#";
+        }
+
+        if(idxHuruf=="1"){ 
+            hurufe="اَ";
+            hurufdep="<font color='red'>اَ</font>مَنَ";
+            huruften="لَ<font color='red'>اَ</font>يَةَ – فَ<font color='red'>اَ</font>نَ ";
+            hurufbel="قَرَ<font color='red'>اَ</font>";
+        };
+        if(idxHuruf=="2"){ 
+            hurufe="بَ";
+            hurufdep="<font color='red'>بَ</font>رَأَ";
+            huruften="تَ<font color='red'>بَ</font>رَ";
+            hurufbel="كَتَ<font color='red'>بَ</font>";
+        }
+        if(idxHuruf=="3"){ 
+            hurufe="تَ";
+            hurufdep="<font color='red'>تَ</font>زَكَ";
+            huruften="كَ<font color='red'>تَ</font>بَ";
+            hurufbel="جَنَ<font color='red'>تَ</font>";
+        };
+        if(idxHuruf=="4"){
+            hurufe="ثَ";
+            hurufdep="<font color='red'>ثَ</font>مَنَ";
+            huruften="كَ<font color='red'>ثَ</font>رَ";
+            hurufbel="حَدَ<font color='red'>ثَ</font>";
+        };
+        if(idxHuruf=="5"){ 
+            hurufe="جَ";
+            hurufdep="<font color='red'>جَ</font>لَسَ";
+            huruften="وَ<font color='red'>جَ</font>دَ";
+            hurufbel="ثَبَ<font color='red'>جَ</font>";
+        };
+        if(idxHuruf=="6"){ 
+            hurufe="حَ";
+            hurufdep="<font color='red'>حَ</font>سَنَ";
+            huruften="رَ<font color='red'>حَ</font>مَ";
+            hurufbel="نَصَ<font color='red'>حَ</font>";
+        };
+        if(idxHuruf=="7"){ 
+            hurufe="خَ";
+            hurufdep="<font color='red'>خَ</font>بَرَ";
+            huruften="دَ<font color='red'>خَ</font>لَ";
+            hurufbel="خَخَ<font color='red'>خَ</font>";
+        };
+        if(idxHuruf=="8"){ 
+            hurufe="دَ";
+            hurufdep="<font color='red'>دَ</font>خَلَ";
+            huruften="خَ<font color='red'>دَ</font>مَ";
+            hurufbel="حَمَ<font color='red'>دَ</font>";
+        };
+        if(idxHuruf=="9"){ 
+            hurufe="ذَ";
+            hurufdep="<font color='red'>ذَ</font>هَبَ";
+            huruften="نَ<font color='red'>ذَ</font>رَ";
+            hurufbel="مَفَ<font color='red'>ذَ</font>";
+        };
+        if(idxHuruf=="10"){ 
+            hurufe="رَ";
+            hurufdep="<font color='red'>رَ</font>زَقَ";
+            huruften="كَ<font color='red'>رَ</font>مَ";
+            hurufbel="نَظَ<font color='red'>رَ</font>";
+        };
+        if(idxHuruf=="11"){ 
+            hurufe="زَ";
+            hurufdep="<font color='red'>زَ</font>مَنَ";
+            huruften="نَ<font color='red'>زَ</font>لَ";
+            hurufbel="عَكَ<font color='red'>زَ</font>";
+        };
+        if(idxHuruf=="12"){ 
+            hurufe="سَ";
+            hurufdep="<font color='red'>سَ</font>مَرَ";
+            huruften="بَ<font color='red'>سَ</font>مَ";
+            hurufbel="عَبَ<font color='red'>سَ</font>";
+        };
+        if(idxHuruf=="13"){ 
+            hurufe="شَ";
+            hurufdep="<font color='red'>شَ</font>رَبَ";
+            huruften="نَ<font color='red'>شَ</font>طَ";
+            hurufbel="رَفَ<font color='red'>شَ</font>";
+        };
+        if(idxHuruf=="14"){ 
+            hurufe="صَ";
+            hurufdep="<font color='red'>صَ</font>بَرَ";
+            huruften="نَ<font color='red'>صَ</font>رَ";
+            hurufbel="مَنَ<font color='red'>صَ</font>";
+        };
+        if(idxHuruf=="15"){ 
+            hurufe="ضَ";
+            hurufdep="<font color='red'>ضَ</font>رَبَ";
+            huruften="نَ<font color='red'>ضَ</font>فَ";
+            hurufbel="حَفَ<font color='red'>ضَ</font>";
+        };
+        if(idxHuruf=="16"){ 
+            hurufe="طَ";
+            hurufdep="<font color='red'>طَ</font>بَقَ";
+            huruften="حَ<font color='red'>طَ</font>بَ";
+            hurufbel="ضَبَ<font color='red'>طَ</font>";
+        };
+        if(idxHuruf=="17"){ 
+            hurufe="ظَ";
+            hurufdep="<font color='red'>ظَ</font>هَرَ";
+            huruften="نَ<font color='red'>ظَ</font>فَ";
+            hurufbel="تَصَ<font color='red'>ظَ</font>";
+        };
+        if(idxHuruf=="18"){ 
+            hurufe="عَ";
+            hurufdep="<font color='red'>عَ</font>مَلَ";
+            huruften="نَ<font color='red'>عَ</font>مَ";
+            hurufbel="مَنَ<font color='red'>عَ</font>";
+        };
+        if(idxHuruf=="19"){ 
+            hurufe="غَ";
+            hurufdep="<font color='red'>غَ</font>رَمَ";
+            huruften="صَ<font color='red'>غَ</font>رَ";
+            hurufbel="مَزَ<font color='red'>غَ</font>";
+        };
+        if(idxHuruf=="20"){ 
+            hurufe="فَ";
+            hurufdep="<font color='red'>فَ</font>رَحَ";
+            huruften="سَ<font color='red'>فَ</font>رَ";
+            hurufbel="خَشَ<font color='red'>فَ</font>";
+        };
+        if(idxHuruf=="21"){ 
+            hurufe="قَ";
+            hurufdep="<font color='red'>قَ</font>رَاَ";
+            huruften="فَ<font color='red'>قَ</font>رَ";
+            hurufbel="رَحَ<font color='red'>قَ</font>";
+        };
+        if(idxHuruf=="22"){ 
+            hurufe="كَ";
+            hurufdep="<font color='red'>كَ</font>رَمَ";
+            huruften="سَ<font color='red'>كَ</font>رَ";
+            hurufbel="مَعَ<font color='red'>كَ</font>";
+        };
+        if(idxHuruf=="23"){ 
+            hurufe="لَ";
+            hurufdep="<font color='red'>لَ</font>زَتَ";
+            huruften="فَ<font color='red'>لَ</font>حَ";
+            hurufbel="عَمَ<font color='red'>لَ</font>";
+        };
+        if(idxHuruf=="24"){ 
+            hurufe="مَ";
+            hurufdep="<font color='red'>مَ</font>نَعَ";
+            huruften="سَ<font color='red'>مَ</font>عَ";
+            hurufbel="سَلَ<font color='red'>مَ</font>";
+        };
+        if(idxHuruf=="25"){ 
+            hurufe="نَ";
+            hurufdep="<font color='red'>نَ</font>ظَمَ";
+            huruften="صَ<font color='red'>نَ</font>عَ";
+            hurufbel="فَتَ<font color='red'>نَ</font>";
+        };
+        if(idxHuruf=="26"){ 
+            hurufe="وَ";
+            hurufdep="<font color='red'>وَ</font>فَقَ";
+            huruften="لَ<font color='red'>وَ</font>مَ";
+            hurufbel="رَخَ<font color='red'>وَ</font>";
+        };
+        if(idxHuruf=="27"){ 
+            hurufe="هَـ ";
+            hurufdep="<font color='red'>هَ</font>دَثَ";
+            huruften="جَ<font color='red'>هَ</font>دَ";
+            hurufbel="زَكَ<font color='red'>هَ</font>";
+        };
+        if(idxHuruf=="28"){ 
+            hurufe="يَ";
+            hurufdep="<font color='red'>يَ</font>سَرَ";
+            huruften="سَ<font color='red'>يَ</font>رَ";
+            hurufbel="مَلَ<font color='red'>يَ</font>";
+        };
+      //console.log(greetingValue);  
+    </script>
+</head>
+
+<body style="background-color: #f9fff9;">
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader text-light" style="background-color: #336667;">
+        <div class="left">
+            <a href="listmateri1.html" class="headerButton">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Fun Qur'an</div>
+        <div class="right"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="full-height">
+        <div class="section full mt-4 mb-4 text-center">
+            <h3>Huruf Sambung</h3>
+            <br />
+            <p style="font-size: 54px; color: red;">
+                <script>
+                    document.write(hurufe);
+                </script>
+            </p>
+        </div>
+        <div class="section mt-2">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <script>
+                                document.write("Huruf " + hurufe +" di depan");
+                            </script>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fs-1">
+                                <script>
+                                    document.write(hurufdep);
+                                </script>    
+                            </h5>
+                            <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                            <!--
+                            <a href="#" type="button" class="btn btn-primary rounded fs-6">
+                            <ion-icon name="volume-high-outline"></ion-icon> Dengarkan</a>
+                            -->
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <script>
+                                document.write("Huruf " + hurufe +" di tengah");
+                            </script>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fs-1">
+                                <script>
+                                    document.write(huruften);
+                                </script>    
+                            </h5>
+                            <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                            <!--
+                            <a href="#" type="button" class="btn btn-primary rounded fs-6">
+                            <ion-icon name="volume-high-outline"></ion-icon> Dengarkan</a>
+                            --> 
+                        </div>
+                    </div>
+                </div>           
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <script>
+                                document.write("Huruf " + hurufe +" di belakang");
+                            </script>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title fs-1">
+                                <script>
+                                    document.write(hurufbel);
+                                </script>    
+                            </h5>
+                            <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                            <!--
+                            <a href="#" type="button" class="btn btn-primary rounded fs-6">
+                            <ion-icon name="volume-high-outline"></ion-icon> Dengarkan</a>                               
+                            -->
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        <!--
+        <div class="section full mt-4 mb-4 text-center">
+            <a href="#" type="button" class="btn btn-primary rounded fs-5" onclick="audione.play();">
+            <ion-icon name="volume-high-outline"></ion-icon> Dengarkan</a>
+        </div>
+        -->
+        <div class="section full mt-4 mb-4 text-center fs-6">
+            <br />
+            <a href="#" style="width: 64px; height: 64px;" type="button" class="btn btn-icon btn-primary btn-lg shadowed" onclick="audione.play();">
+            <ion-icon name="volume-high-outline"></ion-icon></a><br />
+            Klik untuk mendengarkan
+        </div>
+
+        <!-- top left -->
+        <div class="fab-button animate top-left bg">
+            <a id="prevP" href="" class="fab" style="background-color: #336667; width: 48px; height: 48px;">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * top left -->
+
+        <!-- top right -->
+        <div class="fab-button animate top-right">
+            <a id="nextP" href="" class="fab" style="background-color: #336667; width: 48px; height: 48px;">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+        </div>
+        <!-- * top right -->
+
+        <!-- bottom left -->
+        <!--
+        <div class="fab-button animate bottom-left">
+            <a href="#" class="fab">
+                <ion-icon name="add-outline"></ion-icon>
+            </a>
+        </div>
+        -->
+        <!-- * bottom left -->
+
+        <!-- bottom right -->
+        <!--
+        <div class="fab-button animate bottom-right">
+            <a href="#" class="fab">
+                <ion-icon name="add-outline"></ion-icon>
+            </a>
+        </div>
+        -->
+        <!-- * bottom right -->
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu text-light" style="background-color: #336667;">
+        <a href="home.html" class="item">
+            <div class="col">
+                <ion-icon name="home-outline"></ion-icon>Beranda
+            </div>
+        </a>
+        <a href="listmateri1.html" class="item">
+            <div class="col">
+                <ion-icon name="layers-outline"></ion-icon>Huruf Sambung
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    </div>
+    <!-- * App Sidebar -->
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+
+    <script>
+        document.getElementById("prevP").href=prevPage;
+        document.getElementById("nextP").href=nextPage;
+    </script>
+    <script>
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+    </script>
+</body>
+
+</html>

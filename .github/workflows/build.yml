@@ -1,0 +1,48 @@
+name: Build Android APK
+
+# This runs automatically every time you upload/change files,
+# and you can also start it by hand from the "Actions" tab.
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the project files
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install Capacitor
+        run: npm install
+
+      - name: Create the Android project
+        run: npx cap add android
+
+      - name: Copy your web files into it
+        run: npx cap sync android
+
+      - name: Build the APK
+        run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
+
+      - name: Make the APK downloadable
+        uses: actions/upload-artifact@v4
+        with:
+          name: My-Book-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
