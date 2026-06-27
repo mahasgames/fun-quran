@@ -16,8 +16,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="__manifest.json">
     <script>
-        document.addEventListener('backbutton', function(){
-            navigator.app.exitApp();
+        document.addEventListener('DOMContentLoaded', () => {
+            // Guard so it does nothing in a normal desktop browser during testing
+            if (window.Capacitor?.Plugins?.App) {
+            const { App } = Capacitor.Plugins;
+            App.addListener('backButton', () => {
+                App.exitApp();           // already at the first page → close app
+            });
+            }
         });
     </script>
 </head>

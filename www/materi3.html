@@ -21,8 +21,21 @@
         //var audio_dep = new Audio('audio/audio_1_'+idxHuruf+'_dep.mp3');
         //var audio_ten = new Audio('audio/audio_1_'+idxHuruf+'_ten.mp3');
         //var audio_bel = new Audio('audio/audio_1_'+idxHuruf+'_bel.mp3');
-        document.addEventListener('backbutton', function(){
-            location.href='listmateri3.html';
+        //document.addEventListener('backbutton', function(){
+        //    location.href='listmateri3.html';
+        //});
+        document.addEventListener('DOMContentLoaded', () => {
+            // Guard so it does nothing in a normal desktop browser during testing
+            if (window.Capacitor?.Plugins?.App) {
+            const { App } = Capacitor.Plugins;
+            App.addListener('backButton', ({ canGoBack }) => {
+                if (canGoBack) {
+                    location.href='listmateri3.html';
+                } else {
+                    App.exitApp();           // already at the first page → close app
+                }
+            });
+            }
         });
 
         var audione = new Audio('audio/audio_3_'+idxHuruf+'.ogg');
