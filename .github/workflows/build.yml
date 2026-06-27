@@ -34,6 +34,9 @@ jobs:
       - name: Copy your web files into it
         run: npx cap sync android
 
+      - name: Generate the app icon
+        run: npx capacitor-assets generate --android
+
       - name: Build the APK
         run: |
           cd android
@@ -43,6 +46,6 @@ jobs:
       - name: Make the APK downloadable
         uses: actions/upload-artifact@v4
         with:
-          name: My-Book-APK
+          name: Fun-Quran-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
